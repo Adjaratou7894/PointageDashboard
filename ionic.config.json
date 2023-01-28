@@ -1,0 +1,7 @@
+{
+  "name": "PointageDashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
