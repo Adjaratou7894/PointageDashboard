@@ -1,0 +1,150 @@
+<div class="container-fluid ">
+  <!-- <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse"><i
+      class="bi bi-list py-2 p-1 " style="color:black;position:relative; top:2%; left:15%; font-size: 30px;"></i></a>
+  <button class="btn deconnexion btn-danger"> <i class="bi bi-power "></i> Deconnexion</button> -->
+  <style>
+    .deconnexion {
+      position: relative;
+      left: 80%;
+    }
+
+    @media only screen and (max-width: 475px) {
+      .deconnexion {
+        left: 50%;
+      }
+    }
+
+    @media only screen and (min-width: 499px) and (max-width: 857px) {
+
+      .deconnexion {
+        left: 65%;
+      }
+    }
+  </style>
+  <!-- <div class="row flex-nowrap">
+    <div class="col-auto px-2" *ngIf="menuBureau">
+      <app-menu></app-menu>
+    </div> -->
+    <main class="col ps-md-2 pt-2  " style=" height: 100vh ;">
+      <div class="container">
+
+        <!-- file, nom, description, nombrepersonnedemande, datedeb, datefin, idacteurs, idacteurInternes, libelleEntite, typeAct, libelleSalle, idresponsable, userid -->
+
+        <form delegate-handle="dashboard"  action=""
+          class="container1 container py-5">
+
+          <div class="mb-4 altert " style="border-radius:10px;">
+            <!-- <div>
+              <p *ngIf="bool_erreurImpTrieFr" class="m-3 alert-danger"
+                style="font-size: 1.2rem; font-weight: bold; text-align: center;">
+                {{erreurImpTrieFr}}</p>
+              <p *ngIf="bool_erreurImpTrieBack"
+                [ngClass]="erreurImpTrieBack.status == true ? 'alert-success' : 'alert-warning' " class="m-3"
+                style="font-size: 1.2rem; font-weight: bold; text-align: center;">{{erreurImpTrieBack.contenu}}</p>
+            </div> -->
+
+          </div>
+          <div class="row">
+            <div class="mb-3  col-12 col-md-12 viens2  form-row form-floating">
+              <h1>Créer une Formation</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-12 col-md- viens  form-row form-floating">
+              <input type="text" id="name"  placeholder="Nom" class="form form-control inputvalue">
+              <label for="name">Titre: <span style="color: red;">*</span> </label>
+            </div>
+
+           
+         
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="date" id="name" placeholder="yyy/mm/dd"
+                class="form form-control inputvalue">
+              <label for="name">Date début: <span style="color: red;">*</span></label>
+            </div>
+
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="date"  id="name" placeholder="Nom"
+                class="form form-control inputvalue">
+              <label for="name">Date fin: <span style="color: red;">*</span></label>
+            </div>
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="date" id="name" placeholder="hh:mm"
+                class="form form-control inputvalue">
+              <label for="name">Heure de début: <span style="color: red;">*</span></label>
+            </div>
+
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="date"  id="name" placeholder="Nom"
+                class="form form-control inputvalue">
+              <label for="name">Heure de fin: <span style="color: red;">*</span></label>
+            </div>
+
+            <div class="mb-5 col-12 viens1 form-row form-floating">
+              <textarea class="form-control"  id="exampleFormControlTextarea1"
+                rows="3"></textarea>
+              <label for="name">Description: <span style="color: red;">*</span></label>
+            </div>
+
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <select id="sexe" class="form-select form-control inputvalue"
+               >
+                <option selected disabled>Choisir un(e) formateur(trice)</option>
+                <option >Fatoumata Kaloga</option>
+                <option >Nene Sylla</option>
+                <option >Adama Samaké</option>
+                 
+                  
+              </select>
+              <label for="activity">Formateur<span style="color: red;">*</span></label>
+            </div>
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <select id="sexe" class="form-select form-control inputvalue" 
+                >
+                <option selected disabled> --- Responsable ---</option>
+                <option >Hamadoun Kaou DIALLO</option>
+              </select>
+              <label>Responsable<span style="color: red;">*</span></label>
+            </div>
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="number" id="name" placeholder="Nom"
+                class="form form-control inputvalue">
+              <label for="name">Nombre d'apprenant<span style="color: red;">*</span></label>
+            </div>
+
+            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+              <input type="file"   placeholder="Nom"
+                class="form form-control inputvalue">
+              <label for="name">Image<span style="color: red;">*</span></label>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5">
+                <button class="btn b1">Créer</button>
+              </div>
+              <!-- <div class="col-4">
+                <a href="ajouter-tache"> <p class="btn b2" style="background-color: black;color: white;">Ajouter tache</p> </a>
+              </div> -->
+            </div>
+          </div>
+        </form>
+        <div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer mt-3 mb-3">
+          <p class="text-center">&copy; 2023 | Tous droits réservés <span style="color:#F58220;">Orange</span> Digital
+            Center</p>
+        </footer>
+        <style>
+          footer {
+            padding: 25px;
+            background: #202020;
+            color: #FFFFFF;
+          }
+        </style>
+        <!-- Footer -->
+      </div>
+    </main>
+  </div>
+
