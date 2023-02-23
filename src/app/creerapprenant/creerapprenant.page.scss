@@ -2,127 +2,157 @@
 * {
     font-family:'Poppins', sans-serif;;
 }
-// .b{
-//    background: #ffffff;
-//    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-//    border-radius: 12px;
-//    border: none; 
-// }
-.imgGauche{
-    // background-color: black;
-    color: white;
-    border-radius: 12px;
+
+
+
+.tirage_forms {
+  display: flex;
+  width: 100%;
+  justify-content: space-arround;
+ 
+
+ align-items: center;
 }
 
-.container{
-    margin-top: 2%;
-    border-radius: 20px;
-    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.8);
-    padding: 30px;
+.import_form {
+  width: 40%;
+  text-align: left;
+  top: 90px;
+  left: 30%;
+  position:absolute;
+
 }
 
-label{
-    margin-left: 10px;
+.list_form {
+  width: 40%;
+  text-align: left;
+  top: 42px;
+  // left: 46%;
+  position: relative;
 }
-img{
-        position: relative;
-        top: 10%;
-        margin-left: 10%;
-        display: flex;
-        align-items: center;
-    }
-    h2{
-       margin-top: 20%;
-        font-size: 20px;
-    }
 
-.imgGauche h6{
-          
-            margin-bottom: 1vh;
-            color: black;
-            font-size: 15px;
-            text-align: center;
-            justify-content: center;
-            
-        }
-
-
-
-
-
-
- .inputvalue {
-   background: #ffffff;
-   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-   border-radius: 12px;
-   border: none;
- }
- 
- .form {
-   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
- }
- 
- label {
-   margin-left: 10px;
- }
- 
- 
-
-   
-    .forme{
-     padding: 20px;
-     box-shadow: 1px 1px 12px rgba(0, 0, 0.8);
-   
-   }
-   
-   .trait{
-     border: 2px solid #FF6600;
-     width: 20%;
-     text-align: center;
-     margin-left: auto;
-     margin-right: auto;
-   }
+.form_title {
+  padding: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  background-color: black;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 0 10px 0;
   
-   .btn1{
-     background: #FF6600;
-     border-radius: 12px;
-     color: white;
-     font-weight: bold;
-     width: 50%;
-   }
-   .btnImport{
-     background: #FF6600;
-     border-radius: 12px;
-     color: white;
-     font-weight: bold;
-     width: 100%;
-     height: 50px;
-     border: none;
-     font-size: 1.1rem;
-   }
+  
+}
+
+.form_body {
+  // background-color: #F8F8F8;
+  width: 100%;
+  float: left;
+  padding: 2%;
+  box-sizing: border-box;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius:  0  0 30px 30px;
  
-   .btnImport:hover{
-     background: black;
-   }
- 
- 
-   .btnImporter{
-     background: #FF6600;
-     border-radius: 12px;
-     color: white;
-     font-weight: bold;
-     width: 150px;
-   }
-   .btne:hover{
-     border: 2px solid black;
-     transition: width 8s, height 8s, background-color 4s, transform 4s;
-   }
-   .btn1:hover{
-     border: 2px solid black;
-     transition: width 8s, height 8s, background-color 4s, transform 4s;
-   }
-   main{
-     overflow: scroll;
-   }
+  
+}
+
+.form {
+  text-align: center;
+}
+
+
+.file, .new_list_name, .new_ldraw_name, .ldraw_number, .post_number {
+  background-color: #E6E6E6;
+  width: 80%;
+  border: none;
+  padding: 2%;
+  //  margin: -3%;
+  // left: 4px;
+
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 15px  0 15px ;
+}
+
+::placeholder, ::-ms-input-placeholder {
+  color: #E6E6E6;
+  
+}
+
+
+.button4 {
+  color: white;
+  background-color: #FF7900;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  width: 150px;
+  font-weight: 600;
+  height: 30px;
+  margin: 2px 2px;
+  padding: 1px 16px;
+  position: relative;
+}
+
+.button4:hover {
+  background-color: #000000;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+input[type="file"] {
+  display: none;
+  width: 90%;
+  
+}
+
+.label_div label {
+
+  background-color: #E6E6E6;
+  width: 79%;
+  left: 11%;
+  top: 35%;
+  border: none;
+  justify-content: left;
+  text-align: left;
+  padding: 2%;
+  margin: -1%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 15px  0 15px ;
+}
+
+.bi-file-earmark-arrow-up-fill::before {
+  font-size: 17px;
+}
+
+
+
+.lists {
+  width: 94%;
+  background-color: #E6E6E6;
+  border: none;
+  justify-content: left;
+  text-align: left;
+  padding: 2%;
+  margin: -1%;
+  
+}
+
+label {
+  position: absolute;
+  left: 25px;
+  right: 0;
+  top: 30%;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 15px  0 15px ;
+  background-color: #E6E6E6;
+
+}
 
 

@@ -1,136 +1,32 @@
 
-<ion-content >
-  <div class="container-fluid ">
+<div class="tirage_forms">
 
-    <!-- <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" (click)="afficheMenuMobile()"><i
-        class="bi bi-list py-2 p-1 " style="color:black;position:relative; top:2%; left:15%; font-size: 30px;"></i></a>
-    <button (click)="deconnexion()" class="btn deconnexion btn-danger"> <i class="bi bi-power "></i>
-      Deconnexion</button>
-    <a href="liste-globale" style="color:#FF6600; font-size:60px;padding: 200px;position: relative;top: 25px;">
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </a> -->
+    <div class="import_form">
 
-    <style>
-      .deconnexion {
-        position: relative;
-        left: 80%;
-      }
+        <div class="form_title">
+           <h3>Importer la liste des apprenants</h3>
+        </div>
 
-      @media only screen and (max-width: 475px) {
-        .deconnexion {
-          left: 50%;
-        }
-      }
+        <div class="form_body">
 
-      @media only screen and (min-width: 499px) and (max-width: 857px) {
+            <form action="#">
+                <br>
+                <input type="file" id="file" name="file" >
+                <div style="width: 100%;" class="label_div">
+                    <label for="file"><i class="bi bi-file-earmark-arrow-up-fill"></i>&nbsp; Choisir un fichier Excel</label>
+                </div>
+                <br>
+                <br>
+                <input type="text" class="new_list_name" placeholder="Libellé de la liste">
+                <br>
+                <br>
+                
+               
+                <br>
+                <button class="button4">Importer</button>
 
-        .deconnexion {
-          left: 65%;
-        }
-      }
-    </style>
-   
-      <main class="col ps-md-2 pt-2  " style=" height: 100vh ;">
-        <main class="col ps-md-2 pt-2  " style=" height: 100vh ;">
-          <div class="container">
-            <div class="row boxShadow">
-              <!------------- Colonne Gauche---->
-              <div class="col-12 col-md-4 imgGauche">
-                <img src="assets/images/logo.png" alt="image ajouter un postulatn" class="img-fluid rounded">
-              
-              </div>
+            </form>
 
-              <!------------- Colonne Droite ---->
-              <div class="col-12 col-md-8 droite">
-                <form >
-                  <p class="h3"><b>Importer un fichier</b></p>
-  
-                  <div class="trait mb-5"></div>
-  
-                  <!-- <div class="mb-4 altert " style="border-radius:10px;">
-                    <div>
-                      <p *ngIf="bool_erreurImpFr" class="m-3 alert-danger" style="font-size: 1.2rem; font-weight: bold;">
-                        {{erreurImpFr}}</p>
-                      <p *ngIf="bool_erreurImpBack"
-                        [ngClass]="erreurImpBack.status== true ? 'alert-success' : 'alert-warning' " class="m-3"
-                        style="font-size: 1.2rem; font-weight: bold;">{{erreurImpBack.contenu}}</p>
-                    </div>
-                  </div> -->
-  
-                  <div class="col-12 col-md-12">
-                    <div class="mb-3 form-row form-floating">
-                      <input type="text" name="libele" id="libele" placeholder="Libelle de la liste"
-                        class="form form-control inputvalue" >
-                      <label for="libele">Libelle de la liste </label>
-                    </div>
-                  </div>
-  
-                  <div class="col-12 col-md-12">
-                    <div class="mb-3 form-row form-floating">
-                      <select  id="choice" class="form-select form-control inputvalue"
-                        formControlName="libelleActivite">
-                        <option selected>--Choisir formation--</option>
-                        <option >
-                         formationkalanso</option>
-                      </select>
-                      <label style="font-size: 1.2rem; color: black;">Choisir une Activité</label>
-                    </div>
-                  </div>
-  
-                  <div class="col-12 col-md-12">
-                    <div class=" mb-3 mt-3 bttn">
-                      <input type="file" class="form-control" formControlName="file"  />
-                    </div>
-                  </div>
-                  <button class="btn btnImport mb-2 mt-3 " id="open-modal" expand="block"
-                   >Importer</button>
-                </form>
+        </div>
 
-              
-
-              </div>
-            </div>
-            <!-- Footer -->
-            <footer class="footer mt-3 mb-3">
-              <p class="text-center">&copy; 2022 | Tous droits réservés <span style="color:#FF6600;">Orange</span>
-                Digital
-                Center</p>
-            </footer>
-            <style>
-              footer {
-                padding: 25px;
-                background: #202020;
-                color: #FFFFFF;
-              }
-            </style>
-            <!-- Footer -->
-          </div>
-        </main>
-      </main>
     </div>
-
-</ion-content>
-
-<ng-template #erreur id="#erreur">
-  <div class="img" >
-    <div class="">
-      <img src="../../assets/images/errors.jpg" width="30%">
-    </div>
-    <div>
-      <button style="font-size:20px;">Veuillez vous <a href="authentification" class=" btn">connecter</a></button>
-      <style>
-        .img button a:hover {
-          background-color: black;
-          border: 2px solid #ff6600;
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-          color: white;
-        }
-
-        .img button a {
-          background-color: #ff6600;
-          text-decoration: none;
-        }
-      </style>
-    </div>
-  </div>
-</ng-template>

@@ -1,18 +1,67 @@
 <div class="container" >
-  <div class="header">
-    <div class="user-part"> 
-      <div class="welcom"><p class=" "> Bienvenue <b><i>DIALLO Adjaratou !</i></b></p></div>
-    
-      <p class="mx-3 welcomeP">Espace Admin - Gestion des pointages</p></div>
+  <div class="col-12 col-md-12 pt-3">
+    <div class="row header">
+      <div class="col-md-6 ">
+       <div class=" user-part pt-3"> 
       
-    <div class="search">
-      <input type="text" placeholder="Recherche">
-    </div>
-    <div class="notification">
-      <i class="fa fa-bell"></i>
+          <div class="welcom ">
+            <p class=" "> Bienvenue <b><i>DIALLO Adjaratou !</i></b></p>
+          </div>
+          <div class="welcomeP">
+            <p >Espace Admin - Gestion des pointages</p>
+
+          </div>
+       </div>
+     </div>
+
+      <div class=" col-md-6 gauche">
+        <div class="row">
+            <div class="col-md-8 pt-4">
+             <div class="search">
+              <input type="text" placeholder="Recherche">
+             </div>
+            
+            </div>
+           <div class="col-md-4 pt-4">
+             <div class="notification">
+              <button type="button" class="btn" >
+                <i class="bi bi-bell-fill position-relative" style="font-size:30px ;">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                    style="font-size:15px;  background-color: #ff6600;">
+                    10
+                  </span></i>
+              </button>
+             </div>
+            </div>
+        </div>
+       
+       
+     </div>
+   </div>
+  </div>
+   
+  <div class="cards">
+    <div class="row">
+      <div class="col-12 col-md-4">
+    <div class="card">
+      <div class="stati">
+        <div class="icon">
+          <i class="fas fa-user-graduate"></i>
+
+        </div>
+        <div class="home">
+          <p class="pcardHome pt-3">100</p>
+        </div> 
+
+      </div>
+      <div class="text">
+        
+        <p class="txtcardHome">Apprenants</p>
+      </div>
+             
     </div>
   </div>
-  <div class="cards">
+  <!-- <div class="col-md-3">
     <div class="card">
       <div class="stati">
         <div class="icon">
@@ -26,27 +75,12 @@
       </div>
       <div class="text">
         
-        <p>Apprenants</p>
+        <p class="txtcardHome">Apprenants</p>
       </div>
              
     </div>
-    <div class="card">
-      <div class="stati">
-        <div class="icon">
-          <i class="fas fa-user-graduate"></i>
-
-        </div>
-        <div class="home">
-          <p class="pcardHome pt-4">100</p>
-        </div> 
-
-      </div>
-      <div class="text">
-        
-        <p>Apprenants</p>
-      </div>
-             
-    </div>
+  </div> -->
+  <div class="col-12 col-md-4">
     <div class="card">
     
 
@@ -65,48 +99,140 @@
         <p class="txtcardHome">Formations</p>
       </div>
     </div>
+  </div>
+  <div class="col-md-4">
     <div class="card">
+      <div class="stati">
+        <div class="icon">
+         <i class="fas fa-users"></i>
+
+        </div>
+        <div class="home">
+          <p class="pcardHome pt-3">10</p>
+        </div> 
+
+      </div>
+      <div class="text">
+        
+         <p class="txtcardHome">Formateurs</p>
+      </div>
      
-      <i class="fas fa-users"></i>
-      <p class="pcardHome pt-3">10</p>
-      <p class="txtcardHome">Formateurs</p>
     </div>
   </div>
+  </div>
+</div>
   <div class="content">
-    <div class="sub-content-1">Statistique du jour:  21/02/2023</div>
-    <div class="sub-content-2">Statistique par  Mois</div>
+    <div class="row">
+<div class="col-md-6">
+    <div class="sub-content-1">
+   <div class="row  col-12 " style="background-color: #E7EBED;">
+    <div class="rounded-circle align-items-start" style="width: 20px; height: 20px;background-color: #FF6600;">
+       
+    </div>
+    
+    <div class="date" style="margin-left: 5%; margin-top: -4%;"> Statistique du jour:  21/02/2023</div>
+   </div>
+   <!-- <div class="ml-auto">
+    <i class="bi bi-calendar"></i>
+  </div> -->
+      
+     
+    </div>
   </div>
+    <div class="col-md-6"><div class="row col-12" style="background-color: #E7EBED;">
+      <div class="rounded-circle align-items-start" style="width: 20px; height: 20px;background-color: #FF6600;">
+         
+      </div>
+      
+      <div class="date" style="margin-left: 5%; margin-top: -4%;"> Statistique par mois</div>
+     </div>
+  </div>
+  </div>
+  </div>
+ 
   <div class="footer">
+    <div class="row">
+      <div class="col-md-6">
+
     <div class="sub-footer-1">
+      <div class="row">
+        <div class="col-md-6 pt-3">
       <div class="card">
-        <img src="../assets/images/presence.png"  alt="">
-             
-      
-        <span>90</span><br>
-        <span>Présence</span>
-      </div>
-      <div class="card">
-        <img src="../assets/images/permission.png"  alt="">
-             
-      
-        <span>5</span><br>
-        <span>Demande de permission</span>
-      </div>
-      <div class="card">
-        <img src="../assets/images/absence.png"  alt="">
-             
-      
-        <span>90</span><br>
-        <span>Absence</span>
-      </div>
-      <div class="card">
-        <img src="../assets/images/retard.png"  alt="">
-             
-      
-        <span>90</span><br>
-        <span>Retard</span>
+  
+        <div class="stati">
+          <div class="icon pt-3">
+            <img src="../assets/images/presence.png"  alt="">
+  
+          </div>
+          <div class="home">
+            <p class="pcardHome pt-3">90</p>
+          </div> 
+  
+        </div>
+        <div class="text">
+          
+           <p class="">Présence</p>
+        </div>
       </div>
     </div>
-    <div class="sub-footer-2">Place Statistique</div>
+    <div class="col-md-6 pt-3">
+      <div class="card">
+        <div class="stati">
+          <div class="icon pt-3">
+            <img src="../assets/images/permission.png"  alt="">
+  
+          </div>
+          <div class="home">
+            <p class="pcardHome pt-3">5</p>
+          </div> 
+  
+        </div>
+        <div class="text">
+          
+           <p class="">Demande de permission</p>
+        </div>
+      </div></div></div>
+      <div class="row">
+        <div class="col-md-6 pt-3">
+      <div class="card">
+        <div class="stati">
+          <div class="icon pt-3">
+            <img src="../assets/images/absence.png"  alt="">
+  
+          </div>
+          <div class="home">
+            <p class="pcardHome pt-3">5</p>
+          </div> 
+  
+        </div>
+        <div class="text">
+          
+           <p class="">Absence</p>
+        </div>
+      </div> </div>
+      <div class="col-md-6 pt-3 ">
+      <div class="card">
+        <div class="stati">
+          <div class="icon pt-3">
+            <img src="../assets/images/retard.png"  alt="">
+  
+          </div>
+          <div class="home">
+            <p class="pcardHome pt-3">5</p>
+          </div> 
+  
+        </div>
+        <div class="text">
+          
+           <p class="">Retard</p>
+        </div>
+      </div>
+    </div>
   </div>
+  </div>
+</div>
+  <div class="col-md-6">
+    <div class="sub-footer-2"> <img src="../assets/images/statistique.png"  alt="" width="60%"></div>  </div>
+  </div>
+</div>
 </div>
