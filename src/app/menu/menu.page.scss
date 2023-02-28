@@ -58,6 +58,7 @@
 #sidebar-nav {
   width: 250px;
   // animation: sidebar-nav-load var(--sidebar-nav-load-time) ease-out ;
+ 
 }
 
 * {
@@ -110,7 +111,7 @@ i,
 .nom {
   color: white;
   display: flex;
-   margin-left: -10%;
+    margin-left: -10%;
   flex-direction: column;
   margin-top:10%;
 
@@ -126,6 +127,7 @@ i,
   border-radius: 0 80px 0 0;
   position: relative;
   background-color: #202020;
+  margin-left: 5%;
 
 }
 
@@ -174,9 +176,9 @@ a {
 }
 
 ul {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 79vh;
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+  height: 90vh;
 }
 
 ul::-webkit-scrollbar {

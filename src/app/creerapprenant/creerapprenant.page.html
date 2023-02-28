@@ -1,5 +1,10 @@
 
 <div class="tirage_forms">
+    <div class="col-12 col-md-4 py-5 imgGauche">
+        <img src="assets/images/apprenant.jpg" alt="image ajouter un formateur" width="90%"
+          class="img-fluid rounded" style="right: 5%; top: 30%;">
+
+      </div>
 
     <div class="import_form">
 
@@ -9,21 +14,22 @@
 
         <div class="form_body">
 
-            <form action="#">
+            <form [formGroup]="formmodule">
                 <br>
-                <input type="file" id="file" name="file" >
+                <input type="file" id="file" name="file" formControlName="file" (change)="fileChange($event)" >
                 <div style="width: 100%;" class="label_div">
                     <label for="file"><i class="bi bi-file-earmark-arrow-up-fill"></i>&nbsp; Choisir un fichier Excel</label>
                 </div>
                 <br>
                 <br>
-                <input type="text" class="new_list_name" placeholder="Libellé de la liste">
+                <input type="text" class="new_list_name" placeholder="Libellé de la liste" name="libelleliste" formControlName="libelleliste">
                 <br>
                 <br>
                 
                
                 <br>
-                <button class="button4">Importer</button>
+                <button class="button4" (click)=" importerliste()" type="submit">Importer</button>
+                <p  style="margin: 0!important; padding: 0;" *ngIf="msg != '' " >{{msg}}</p>
 
             </form>
 

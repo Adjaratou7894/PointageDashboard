@@ -1,0 +1,173 @@
+<ion-content>
+  <div class="container-fluid ">
+
+    <main class="col ps-md-2 pt-2  " style=" height: 100vh ;">
+      <main class="col ps-md-2 pt-2  " style=" height: 100vh ;">
+        <div class="container">
+          <div class="row boxShadow">
+            <!------------- Colonne Gauche---->
+            <div class="col-12 col-md-4 py-5 imgGauche">
+              <img src="assets/images/formateur.jpg" alt="image ajouter un formateur" width="90%"
+                class="img-fluid rounded" style="right: 5%; top: 30%;">
+
+            </div>
+
+            <!------------- Colonne Droite ---->
+            <div class="col-12 col-md-8 droite">
+              <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+                <fieldset>
+                  <legend class="display-6 text-center my-3"><b>Ajouter un Formateur</b></legend>
+                </fieldset>
+                <div class="trait"></div>
+                <!-- =========================================  Retour de message d'erreur ou success  ========================================== -->
+
+
+
+
+                <div class="row col-12">
+                  <div class="mb-3 col-12 col-md-6 form-row form-floating">
+                    <input id="name" placeholder="Nom" type="text" class="form-control" name="nom"
+                      [(ngModel)]="form.nom" required #nom="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && nom.errors }">
+                    <label for="name">Nom <span style="color: red;">*</span></label>
+
+                    <div class="invalid-feedback" *ngIf="nom.errors && f.submitted">
+                      <div *ngIf="nom.errors['required']">Nom obligatoire</div>
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-md-6 form-row form-floating">
+                    <input type="text" name="prenom" id="firstname" placeholder="Prénom"
+                      class="form form-control inputvalue" [(ngModel)]="form.prenom" required #prenom="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && prenom.errors }">
+                    <label for="firstname">Prénom:<span style="color: red;">*</span></label>
+
+                    <div class="invalid-feedback" *ngIf="prenom.errors && f.submitted">
+                      <div *ngIf="prenom.errors['required']">Prenom obligatoire</div>
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-md-6 form-row form-floating">
+                    <input type="text" name="telephone" id="num" placeholder="Numéro"
+                      class="form form-control inputvalue" [(ngModel)]="form.telephone" required #telephone="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && telephone.errors }">
+                    <label for="num">Numéro <span style="color: red;">*</span></label>
+                    <div class="invalid-feedback" *ngIf="telephone.errors && f.submitted">
+                      <div *ngIf="telephone.errors['required']">Numéro obligatoire</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 col-12 col-md-6 form-row form-floating">
+                    <select name="genre" id="genre" class="form-select form-control" [(ngModel)]="form.genre" required
+                      #genreI="ngModel" [ngClass]="{ 'is-invalid': f.submitted && genre.errors }
+                     ">
+                      <option [ngValue]="genreselect.genre" *ngFor=" let genreselect of genre">{{genreselect.genre}}
+                      </option>
+                      <label for="sexe">Genre</label>
+                    </select>
+
+                    <label for="sexe">Genre</label>
+
+
+                    <!-- <label for="sexe">Genre</label> -->
+                    <div class="invalid-feedback" *ngIf="genre.errors && f.submitted">
+                      <div *ngIf="genre.errors['required']">Genre obligatoire</div>
+                    </div>
+
+                  </div>
+                  <div class="mb-3 col-12 col-md-12 form-row form-floating">
+                    <input type="email" name="email" id="email" placeholder="email" class="form form-control inputvalue"
+                      [(ngModel)]="form.email" required email #email="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                    <label for="email">Email</label>
+
+                    <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                      <div *ngIf="email.errors['required']">Email obligatoire!</div>
+                      <div *ngIf="email.errors['email']">
+                        Email must be a valid email address
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3 col-12 col-md-12 form-row form-floating">
+                    <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
+                      placeholder="mot de passe" required minlength="8" #password="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                    <label for="email">Mot de passe:<span style="color: red;">*</span></label>
+
+                    <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                      <div *ngIf="password.errors['required']">Password is required</div>
+                      <div *ngIf="password.errors['minlength']">
+                        Password doit etre 8 caracteres
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3 col-12 col-md-12 form-row form-floating">
+                    <input type="password" class="form-control" [(ngModel)]="form.confirmPassword" name="confirmPassword" 
+                      placeholder="mot de passe" required minlength="8" #password="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                    <label for="email"> Confirmer Mot de passe <span style="color: red;">*</span></label>
+
+                    <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                      <div *ngIf="password.errors['required']">Password is required</div>
+                      <div *ngIf="password.errors['minlength']">
+                        Password doit etre 8 caracteres
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="mb-3 col-12 col-md-12 form-row form-floating">
+                    <select id="liste" class="form-select form-control" name="role" [(ngModel)]="form.role" required
+                      #roleforma="ngModel" [ngClass]="{ 'is-invalid': f.submitted && role.errors }">
+                      <option selected> Choisir role </option>
+                      <option *ngFor=" let roleselect of role" value="{{roleselect.name}}">{{roleselect.name}}</option>
+                    
+                    </select>
+                    <label for="sexe">Role <span style="color: red;">*</span></label>
+                  </div>
+
+
+                </div>
+                <!-- <button class="btn btnAjouter">Valider</button> -->
+
+
+
+                <div class="form-group">
+                  <button class="btn btnAjouter py-2 btn-block">Ajouter</button>
+                </div>
+
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                  Echec erreur!<br />{{ errorMessage }}
+                </div>
+
+
+                <div class="alert alert-success" *ngIf="isSuccessful">
+                  Your registration is successful!
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+          <!-- Footer -->
+          <footer class="footer mt-3 mb-3">
+            <p class="text-center">&copy; 2022 | Tous droits réservés <span style="color:#FF6600;">Orange</span>
+              Digital
+              Center</p>
+          </footer>
+          <style>
+            footer {
+              padding: 25px;
+              background: #202020;
+              color: #FFFFFF;
+            }
+          </style>
+          <!-- Footer -->
+        </div>
+      </main>
+    </main>
+  </div>
+
+</ion-content>

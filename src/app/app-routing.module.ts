@@ -1,38 +1,69 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AdminPage } from './admin/admin.page';
+import { CreerapprenantPage } from './creerapprenant/creerapprenant.page';
+import { FormationPage } from './formation/formation.page';
+import { ListePointagePage } from './liste-pointage/liste-pointage.page';
+import { MenuPage } from './menu/menu.page';
+
+
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  // },
 
   {
     path: '',
-    redirectTo: 'formation',
+    redirectTo: 'connexion',
     pathMatch: 'full'
   },
 
+  // {
+  //   path: 'menu',
+  //   pathMatch: 'full'
+  // },
+
+  // {
+  //   path: "menu", component:  MenuPage,
+
+  //   children: [
+  //   //   {path: 'admin', component: AdminPage},
+  //   //  {path: 'creerapprenant', component: CreerapprenantPage},
+  //   //   {path: 'formateur', component: FormationPage},
+
+  //   //   {path: 'formation', component: FormationPage},
+  //   //   {path: 'liste_pointage', component: ListePointagePage},
+  //   ]
+  // },
+  {path: 'admin', component: AdminPage},
+
+
  
+  // {
+  //   path: 'formation',
+  //   loadChildren: () => import('./formation/formation.module').then( m => m.FormationPageModule)
+  // },
   {
-    path: 'formation',
-    loadChildren: () => import('./formation/formation.module').then( m => m.FormationPageModule)
-  },
-  {
-    path: 'admin',
+    path: 'menu/admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
   {
-    path: 'user',
-    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+    path: 'formateur',
+    loadChildren: () => import('./formateur/formateur.module').then( m => m.FormateurPageModule)
   },
-  {
-    path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  },
+  // {
+  //   path: 'menu',
+  //   loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  // },
   {
     path: 'creerformation',
     loadChildren: () => import('./creerformation/creerformation.module').then( m => m.CreerformationPageModule)
+  },
+  {
+    path: 'formation',
+    loadChildren: () => import('./formation/formation.module').then( m => m.FormationPageModule)
   },
   {
     path: 'creerapprenant',
@@ -46,7 +77,7 @@ const routes: Routes = [
     path: 'demande-permission',
     loadChildren: () => import('./demande-permission/demande-permission.module').then( m => m.DemandePermissionPageModule)
   },
-  {
+   {
     path: 'ajout-formateur',
     loadChildren: () => import('./ajout-formateur/ajout-formateur.module').then( m => m.AjoutFormateurPageModule)
   },
