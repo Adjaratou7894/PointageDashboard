@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AdminPage } from './admin/admin.page';
+import { ToastrModule } from 'ngx-toastr'; 
 import { CreerapprenantPage } from './creerapprenant/creerapprenant.page';
 import { FormationPage } from './formation/formation.page';
 import { ListePointagePage } from './liste-pointage/liste-pointage.page';
@@ -96,6 +97,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    ToastrModule.forRoot() ,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]

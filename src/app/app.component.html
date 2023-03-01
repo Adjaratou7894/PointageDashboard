@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main" when="lg">
-    <ion-menu menuId="main-menu" contentId="main">
+    <ion-menu menuId="main-menu" contentId="main" *ngIf="!isLoginPage()">
       <ion-content>
   
           
@@ -12,7 +12,7 @@
     }
   </style> -->
   
-   <div id="sidebar" class="collapse collapse-horizontal  show ">
+   <div id="sidebar" class="collapse collapse-horizontal  show " >
     <div id="sidebar-nav" class="list-group border-0  hh rounded-0 text-sm-start">
       <div class="py-2 align-items-sm-center" > 
         <img src="../assets/images/logo.png" style="height: 90px; width: 100px; ; " alt="">
@@ -35,40 +35,43 @@
   
         </li>
        <li routerLinkActive=" 'active' " class="li ">
-          <a routerLink="/accueil-user" class="nav-link  align-middle li">
+          <a routerLink="/admin" class="nav-link  align-middle li">
             <i class="bi bi-house"></i> <span class="ms-1  d-sm-inline light px-3">Accueil</span></a>
         </li>
         <!-- <li [routerLinkActive]=" 'active' " class="li ">
           <a  routerLink="/admin-accueil" class="nav-link  align-middle li">
             <i class="bi bi-grid-3x3-gap-fill"></i> <span class="ms-1  d-sm-inline light px-3">Tableau bord</span></a>
         </li> -->
-        <li routerLinkActive="'active'"  class="li">
-  
-          <a routerLink="/liste-globale" class="nav-link  align-middle li">
-            <i class="bi bi-card-checklist"></i> <span class="ms-1  d-sm-inline light px-3">Permissions</span></a>
+
+        <li  routerLinkActive="'active'" class="li">
+          <a routerLink="/formation" class="nav-link  align-middle li">
+            <i class="bi bi-person-workspace"> </i><span class="ms-1  d-sm-inline light px-3">Formations</span></a>
         </li>
+        
         <!-- L'onglet comportera 3 sous onglets ( la liste des ponctuels, la liste des retards, les sanctions) -->
         <li routerLinkActive="'active'" class="li">
           <a routerLink="/liste-pointage" class="nav-link  align-middle li">
                 <i class="bi bi-clipboard-data"></i> <span class="ms-1  d-sm-inline light px-3">Pointages</span></a>
         </li>
         <!-- =============================== ADMIN ============================================= -->
-        <li  routerLinkActive="'active'" class="li">
-          <a routerLink="/formation" class="nav-link  align-middle li">
-            <i class="bi bi-person-workspace"> </i><span class="ms-1  d-sm-inline light px-3">Formations</span></a>
+        <li routerLinkActive="'active'"  class="li">
+  
+          <a routerLink="/liste-globale" class="nav-link  align-middle li">
+            <i class="bi bi-card-checklist"></i> <span class="ms-1  d-sm-inline light px-3">Permissions</span></a>
         </li>
+        
         <!-- =============================== RESPONSABLE ======================================== -->
   
         <li routerLinkActive="'active'" class="li">
-          <a routerLink="/menu/creerapprenant" class="nav-link  align-middle li">
+          <a routerLink="/creerapprenant" class="nav-link  align-middle li">
             <i class="bi bi-person-circle"></i> <span class="ms-1  d-sm-inline light px-3">Apprenants</span></a>
         </li>
         <li routerLinkActive="'active'" class="li">
-          <a routerLink="/details-activite" class="nav-link  align-middle li">
+          <a routerLink="/liste" class="nav-link  align-middle li">
             <i class="bi bi-bar-chart-line"></i> <span class="ms-1  d-sm-inline light px-3">Listes</span></a>
         </li>
         <li routerLinkActive="'active'" class="li">
-          <a routerLink="/liste-utilisateur" class="nav-link  align-middle li">
+          <a routerLink="/formateur" class="nav-link  align-middle li"> 
             <i class="bi bi-person-circle"></i> <span class="ms-1  d-sm-inline light px-3">Utilisateurs</span></a>
         </li>
 

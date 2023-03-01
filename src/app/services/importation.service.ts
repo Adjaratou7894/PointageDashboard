@@ -16,10 +16,10 @@ export class ImportationService {
 
   constructor(private http: HttpClient) { }
   api ="http://localhost:8080/api/User/ajoute_apprenant"
-  importliste(libelleliste:String, file:any):Observable<void>{
+  importliste(libelleliste:String, file:any):Observable<any>{
     let data= new FormData();
     data.append("file",file)
-    return this.http.post<void>(`${this.api}/${libelleliste}`,data);
+    return this.http.post(`${this.api}/${libelleliste}`,data,{responseType:"text"});
 
  
   }

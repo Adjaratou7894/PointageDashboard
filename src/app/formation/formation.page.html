@@ -1,7 +1,7 @@
 <div class="container-fluid ">
-  <!-- <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse"><i
+  <a href="#" data-bs-target="#menu" data-bs-toggle="collapse"><i
       class="bi bi-list py-2 p-1 " style="color:black;position:relative; top:2%; left:15%; font-size: 30px;"></i></a>
-  <button class="btn deconnexion btn-danger"> <i class="bi bi-power "></i> Deconnexion</button> -->
+  <button class="btn deconnexion btn-danger"> <i class="bi bi-power "></i> Deconnexion</button>
   <style>
     .deconnexion {
       position: relative;
@@ -31,17 +31,10 @@
         <!-- file, nom, description, nombrepersonnedemande, datedeb, datefin, idacteurs, idacteurInternes, libelleEntite, typeAct, libelleSalle, idresponsable, userid -->
 
         <form delegate-handle="dashboard"  action=""
-          class="container1 container py-5">
+          class="container1 container py-5"   *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
           <div class="mb-4 altert " style="border-radius:10px;">
-            <!-- <div>
-              <p *ngIf="bool_erreurImpTrieFr" class="m-3 alert-danger"
-                style="font-size: 1.2rem; font-weight: bold; text-align: center;">
-                {{erreurImpTrieFr}}</p>
-              <p *ngIf="bool_erreurImpTrieBack"
-                [ngClass]="erreurImpTrieBack.status == true ? 'alert-success' : 'alert-warning' " class="m-3"
-                style="font-size: 1.2rem; font-weight: bold; text-align: center;">{{erreurImpTrieBack.contenu}}</p>
-            </div> -->
+           
 
           </div>
           <div class="row">
@@ -52,58 +45,86 @@
 
           <div class="row">
             <div class="mb-3 col-12 col-md- viens  form-row form-floating">
-              <input type="text" id="name"  placeholder="Nom" class="form form-control inputvalue">
+              <input type="text" id="name" name="titre"  placeholder="titre" class="form form-control inputvalue"  [(ngModel)]="form.intituleformation" required #intituleformation="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && intituleformation.errors }">
               <label for="name">Titre: <span style="color: red;">*</span> </label>
+
+              <div class="invalid-feedback" *ngIf="intituleformation
+              .errors && f.submitted">
+                <div *ngIf="intituleformation.errors['required']">Titre obligatoire</div>
+              </div>
             </div>
 
            
          
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <input type="date" id="name" placeholder="yyy/mm/dd"
-                class="form form-control inputvalue">
+              <input type="date" id="name" placeholder="yyy/mm/dd" name="dateDebutForm"
+                class="form form-control inputvalue"  [(ngModel)]="form.dateDebutForm" required #dateDebutForm="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && dateDebutForm.errors }">
               <label for="name">Date début: <span style="color: red;">*</span></label>
+
+              <div class="invalid-feedback" *ngIf="dateDebutForm.errors && f.submitted">
+                <div *ngIf="dateDebutForm.errors['required']">Date de début obligatoire</div>
+              </div>
             </div>
 
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <input type="date"  id="name" placeholder="Nom"
-                class="form form-control inputvalue">
+              <input type="date"  id="name" placeholder="yyy/mm/dd" name="dateFinForm"
+                class="form form-control inputvalue"  [(ngModel)]="form.dateFinForm" required #dateFinForm="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && dateFinForm.errors }">
               <label for="name">Date fin: <span style="color: red;">*</span></label>
+
+              <div class="invalid-feedback" *ngIf="dateFinForm.errors && f.submitted">
+                <div *ngIf="dateFinForm.errors['required']">Début de fin obligatoire</div>
+              </div>
             </div>
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <input type="date" id="name" placeholder="hh:mm"
-                class="form form-control inputvalue">
+              <input type="time" id="name" placeholder="hh:mm" name="heureDebutForm"
+                class="form form-control inputvalue"  [(ngModel)]="form.heureDebutForm" required #heureDebutForm="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && heureDebutForm.errors }">
               <label for="name">Heure de début: <span style="color: red;">*</span></label>
+
+              <div class="invalid-feedback" *ngIf="heureDebutForm.errors && f.submitted">
+                <div *ngIf="heureDebutForm.errors['required']"> Heure de début obligatoire</div>
+              </div>
             </div>
 
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <input type="date"  id="name" placeholder="Nom"
-                class="form form-control inputvalue">
+              <input type="time"  id="name" placeholder="hh:mm"  name="heureFinForm"
+                class="form form-control inputvalue"  [(ngModel)]="form.heureFinForm" required #heureFinForm="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && heureFinForm.errors }">
               <label for="name">Heure de fin: <span style="color: red;">*</span></label>
+
+              <div class="invalid-feedback" *ngIf="heureFinForm.errors && f.submitted">
+                <div *ngIf="heureFinForm.errors['required']">Heure de fin obligatoire</div>
+              </div>
             </div>
 
             <div class="mb-5 col-12 viens1 form-row form-floating">
-              <textarea class="form-control"  id="exampleFormControlTextarea1"
+              <textarea class="form-control"  id="exampleFormControlTextarea1" name="description" [(ngModel)]="form.description" required #description="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && description.errors }"
                 rows="3"></textarea>
-              <label for="name">Description: <span style="color: red;">*</span></label>
+              <label for="name">Description:<span style="color: red;">*</span></label>
             </div>
 
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <select id="sexe" class="form-select form-control inputvalue"
+              <select id="sexe" class="form-select form-control inputvalue" name="formateur"[(ngModel)]="form.formateur" required
+              #formatrice="ngModel" [ngClass]="{ 'is-invalid': f.submitted && formateur.errors }"
                >
                 <option selected disabled>Choisir un(e) formateur(trice)</option>
-                <option >Fatoumata Kaloga</option>
-                <option >Nene Sylla</option>
-                <option >Adama Samaké</option>
+                <option *ngFor=" let formateurselect of formateur" value="{{formateurselect.prenom}} {{formateurselect.nom}} ">{{formateurselect.prenom}} {{formateurselect.nom}}</option>
+                
                  
                   
               </select>
               <label for="activity">Formateur<span style="color: red;">*</span></label>
             </div>
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
-              <select id="sexe" class="form-select form-control inputvalue" 
+              <select id="sexe" class="form-select form-control inputvalue" name="responsable" [(ngModel)]="form.responsable" required
+              #respon="ngModel" [ngClass]="{ 'is-invalid': f.submitted && responsable.errors }" 
                 >
                 <option selected disabled> --- Responsable ---</option>
-                <option >Hamadoun Kaou DIALLO</option>
+                <option *ngFor=" let responsableselect of responsable" value="{{responsableselect.prenom}} {{responsableselect.nom}} ">{{responsableselect.prenom}} {{responsableselect.nom}}</option>
               </select>
               <label>Responsable<span style="color: red;">*</span></label>
             </div>
@@ -119,10 +140,24 @@
               <label for="name">Image<span style="color: red;">*</span></label>
             </div>
 
-            <div class="row">
-              <div class="col-md-5">
-                <button class="btn b1">Créer</button>
-              </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-5">
+                  <button class="btn b1">Créer</button>
+                </div>
+             
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Echec erreur!<br />{{ errorMessage }}
+            </div>
+
+
+            <div class="alert alert-success" *ngIf="isSuccessful">
+              Your registration is successful!
+            </div>
+
+           
               <!-- <div class="col-4">
                 <a href="ajouter-tache"> <p class="btn b2" style="background-color: black;color: white;">Ajouter tache</p> </a>
               </div> -->

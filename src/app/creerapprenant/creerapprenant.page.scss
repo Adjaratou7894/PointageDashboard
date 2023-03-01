@@ -11,14 +11,14 @@
   justify-content: space-arround;
  
 
- align-items: center;
+//  align-items: center;
 }
 
 .import_form {
   width: 40%;
   text-align: left;
-  top: 90px;
-  left: 30%;
+  top: 26%;
+  left: 38%;
   position:absolute;
 
 }
@@ -106,6 +106,7 @@
 
 
 
+
 input[type="file"] {
   display: none;
   width: 90%;
@@ -158,6 +159,10 @@ label {
   background-color: #FF6600;
  color: white;
  border-radius: 12px;
+ margin-top: 15%;
+ width: 120%;
+ height: 60%;
+ left: 5%;
 }
 
 

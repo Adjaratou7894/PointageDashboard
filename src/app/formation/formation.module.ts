@@ -7,13 +7,22 @@ import { IonicModule } from '@ionic/angular';
 import { FormationPageRoutingModule } from './formation-routing.module';
 
 import { FormationPage } from './formation.page';
+import { ToastrModule } from 'ngx-toastr'; 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormationPageRoutingModule
+    FormationPageRoutingModule,
+    ToastrModule.forRoot() ,
+    BrowserAnimationsModule,
+
+  
+    
   ],
   declarations: [FormationPage]
 })

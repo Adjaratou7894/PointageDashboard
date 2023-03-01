@@ -10,7 +10,23 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
 
-  getNombreAprrenant():Observable<object>{
-    return this.http.get(" http://localhost:8080/api/User/listapprenant");
+  getNombreAprrenant():Observable<any>{
+    return this.http.get("http://localhost:8080/api/User/listapprenant");
+  
+  }
+
+  getNombreFormateur():Observable<any>{
+    return this.http.get("http://localhost:8080/api/User/listFormateur");
+  }
+
+  getNombreFormation():Observable<any>{
+    return this.http.get("http://localhost:8080/api/formation/list");
+  }
+
+  getNomPrenom():Observable<any>{
+    return this.http.get(" http://localhost:8080/api/User/listformation");
+  }
+  getNombrepresence():Observable<any>{         
+    return this.http.get(" http://localhost:8080/api/User/listformation");
   }
 }
