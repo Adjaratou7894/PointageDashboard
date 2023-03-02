@@ -79,8 +79,8 @@ const routes: Routes = [
     loadChildren: () => import('./demande-permission/demande-permission.module').then( m => m.DemandePermissionPageModule)
   },
    {
-    path: 'ajout-formateur',
-    loadChildren: () => import('./ajout-formateur/ajout-formateur.module').then( m => m.AjoutFormateurPageModule)
+    path: 'liste-user',
+    loadChildren: () => import('./liste-user/liste-user.module').then( m => m.ListeUserPageModule)
   },
   {
     path: 'connexion',
@@ -90,6 +90,11 @@ const routes: Routes = [
     path: 'splash-screen',
     loadChildren: () => import('./splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
   },
+  {
+    path: 'liste-user',
+    loadChildren: () => import('./liste-user/liste-user.module').then( m => m.ListeUserPageModule)
+  },
+
 
 
 

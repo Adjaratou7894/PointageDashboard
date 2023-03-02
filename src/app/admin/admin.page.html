@@ -5,7 +5,7 @@
        <div class=" user-part pt-3"> 
       
           <div class="welcom ">
-            <p class=" "> Bienvenue <b><i>DIALLO Adjaratou !</i></b></p>
+            <p class=" "> Bienvenue <b><i>{{nomadmin.nom}} {{nomadmin.prenom}}!</i></b></p>
           </div>
           <div class="welcomeP">
             <p >Espace Admin - Gestion des pointages</p>
@@ -130,7 +130,7 @@
        
     </div>
     
-    <div class="date" style="margin-left: 5%; margin-top: -4%;"> Statistique du jour:  21/02/2023</div>
+    <div class="date" style="margin-left: 5%; margin-top: -4%;"> Statistique du jour: {{today}}</div>
    </div>
    <!-- <div class="ml-auto">
     <i class="bi bi-calendar"></i>
@@ -165,7 +165,7 @@
   
           </div>
           <div class="home">
-            <p class="pcardHome pt-3">90</p>
+            <p class="pcardHome pt-3">{{nombrepointage}}</p>
           </div> 
   
         </div>
@@ -183,7 +183,7 @@
   
           </div>
           <div class="home">
-            <p class="pcardHome pt-3">5</p>
+            <p class="pcardHome pt-3">{{nombrepermission}}</p>
           </div> 
   
         </div>
@@ -201,7 +201,7 @@
   
           </div>
           <div class="home">
-            <p class="pcardHome pt-3">5</p>
+            <p class="pcardHome pt-3">0</p>
           </div> 
   
         </div>
@@ -218,7 +218,7 @@
   
           </div>
           <div class="home">
-            <p class="pcardHome pt-3">5</p>
+            <p class="pcardHome pt-3">0</p>
           </div> 
   
         </div>

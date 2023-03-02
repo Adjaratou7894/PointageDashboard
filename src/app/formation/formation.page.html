@@ -1,7 +1,7 @@
 <div class="container-fluid ">
-  <a href="#" data-bs-target="#menu" data-bs-toggle="collapse"><i
+  <!-- <a href="#" data-bs-target="#menu" data-bs-toggle="collapse"><i
       class="bi bi-list py-2 p-1 " style="color:black;position:relative; top:2%; left:15%; font-size: 30px;"></i></a>
-  <button class="btn deconnexion btn-danger"> <i class="bi bi-power "></i> Deconnexion</button>
+  <button class="btn deconnexion btn-danger"> <i class="bi bi-power "></i> Deconnexion</button> -->
   <style>
     .deconnexion {
       position: relative;
@@ -31,7 +31,7 @@
         <!-- file, nom, description, nombrepersonnedemande, datedeb, datefin, idacteurs, idacteurInternes, libelleEntite, typeAct, libelleSalle, idresponsable, userid -->
 
         <form delegate-handle="dashboard"  action=""
-          class="container1 container py-5"   *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          class="container1 container py-5"    name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
           <div class="mb-4 altert " style="border-radius:10px;">
            
@@ -76,6 +76,9 @@
 
               <div class="invalid-feedback" *ngIf="dateFinForm.errors && f.submitted">
                 <div *ngIf="dateFinForm.errors['required']">Début de fin obligatoire</div>
+                <div *ngIf="dateFinForm.errors['min']">La date de fin doit être supérieure à la date de début</div>
+
+               
               </div>
             </div>
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
@@ -97,6 +100,7 @@
 
               <div class="invalid-feedback" *ngIf="heureFinForm.errors && f.submitted">
                 <div *ngIf="heureFinForm.errors['required']">Heure de fin obligatoire</div>
+                <div *ngIf="heureFinForm.errors['min']">L'heure fin doit être supérieure à la date de début</div>
               </div>
             </div>
 
@@ -143,7 +147,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-md-5">
-                  <button class="btn b1">Créer</button>
+                  <button type="submit" class="btn b1" >Créer</button>
                 </div>
              
             </div>
@@ -154,7 +158,7 @@
 
 
             <div class="alert alert-success" *ngIf="isSuccessful">
-              Your registration is successful!
+              Formation ajoute avec Succès!
             </div>
 
            

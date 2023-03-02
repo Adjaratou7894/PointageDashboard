@@ -7,7 +7,7 @@ import { AuthService } from '../services/_services/auth.service';
   styleUrls: ['./formateur.page.scss'],
 })
 export class FormateurPage implements OnInit {
-
+  
   form: any = {
     username: null,
     email: null,
@@ -63,9 +63,11 @@ export class FormateurPage implements OnInit {
           this.isSignUpFailed = true;
         }
       });
+      this.form.reset();
       
     })
 
+    
   
     // const role= new Set(['admin', 'formateur']);
     // const { email,nom,prenom,telephone,genre,  password,role } = this.form;

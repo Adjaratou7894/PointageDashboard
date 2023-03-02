@@ -18,6 +18,9 @@ export class CreerapprenantPage implements OnInit {
   msg: string="";
   lists: any;
   message:string="";
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
   constructor( private importationservice: ImportationService , private formB:FormBuilder) { }
 

@@ -14,7 +14,7 @@
 
             <!------------- Colonne Droite ---->
             <div class="col-12 col-md-8 droite">
-              <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+              <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
 
                 <fieldset>
                   <legend class="display-6 text-center my-3"><b>Ajouter un utilisateur</b></legend>
@@ -88,7 +88,7 @@
                     </div>
                   </div>
 
-
+<!-- 
                   <div class="mb-3 col-12 col-md-12 form-row form-floating">
                     <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
                       placeholder="mot de passe" required minlength="8" #password="ngModel"
@@ -114,7 +114,7 @@
                         Password doit etre 8 caracteres
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
 
 
@@ -135,7 +135,7 @@
 
 
                 <div class="form-group">
-                  <button class="btn btnAjouter py-2 btn-block">Ajouter</button>
+                  <button class="btn btnAjouter py-2 btn-block" type="submit">Ajouter</button>
                 </div>
 
                 <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -144,7 +144,7 @@
 
 
                 <div class="alert alert-success" *ngIf="isSuccessful">
-                  Your registration is successful!
+                  Utilisateur enregistre avec Succès!
                 </div>
 
               </form>

@@ -28,20 +28,20 @@
         <div class="row ro py-3">
 
 
-          <h3>La liste des pointages</h3>
+          <h3>La liste des utilisateurs</h3>
           <div class="trait"></div>
           <div class="position">
-            <button class="btn btnAjouter">23/02/2023</button>
+            <button class="btn btnAjouter">Exporter</button>
             <form action="">
               <button class="btn btnAjouter recherche" style="display:flex ;"><i class="bi bi-search py-1"></i> <input
                   type="text" style="border: hidden; border: 0; background: transparent;"></button>
             </form>
             <div class="mb-3 col-12 col-md-3 form-row form-floating">
               <select name="designation" id="designation" class="form-select form-control bi bi-filter-right">
-                <option selected>Filtré par Formation</option>
-                <option>Kalanso</option>
-                <option>AWS</option>
-                <option>IA</option>
+                <option selected>Filtré par Role</option>
+                <option>Apprenant</option>
+                <option>Formateur</option>
+                <option>Admin</option>
               </select>
             </div>
 
@@ -52,19 +52,23 @@
                 <tr>
                   <th scope="col" class="ra">Nom</th>
                   <th scope="col">Prénom</th>
-                  <th scope="col">Formation</th>
-                  <th scope="col">Heure d'arrivée</th>
-                  <th scope="col" class="raf">Heure de départ</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Téléphone</th>
+                  <th scope="col" >Username</th>
+                  <th scope="col" >Role</th>
+                  <th scope="col" class="ra1 raf">Action</th>
 
                 </tr>
               </thead>
               <tbody>
-                <tr >
-                  <td scope="row">DIALLO</td>
-                  <td>Adjaratou</td>
-                  <td>Kalanso </td>
-                  <td >6:45</td>
-                  <td >17:30</td>
+                <tr  *ngFor=" let infouser of listeuser">
+                  <td scope="row">{{infouser.nom}}</td>
+                  <td> {{infouser.prenom}}</td>
+                  <td>{{infouser.email}}</td>
+                  <td >{{infouser.telephone}}</td>
+                  <td >{{infouser.username}}</td>
+                  <td >{{infouser.role}}</td>
+                  <td><i class="bi bi-pencil-square i" style="font-size: 20px;" ></i><i class="bi bi-trash-fill i" style="color: black; font-size: 20px;"></i></td>
 
                 </tr>
                  

@@ -27,6 +27,13 @@ export class AdminService {
     return this.http.get(" http://localhost:8080/api/User/listformation");
   }
   getNombrepresence():Observable<any>{         
-    return this.http.get(" http://localhost:8080/api/User/listformation");
+    return this.http.get(" http://localhost:8080/api/pointage/listPointage");
+  }
+
+  getNombrePermission():Observable<any>{         
+    return this.http.get("http://localhost:8080/api/permission/list");
+  }
+  getinfoAdmin():Observable<any>{
+    return this.http.get("http://localhost:8080/api/User/listadmin");
   }
 }

@@ -32,6 +32,10 @@
                 <button class="button4" (click)=" importerliste()" type="submit">Importer</button>
                 <p  style="margin: 0!important; padding: 0;" *ngIf="msg != '' " >{{msg}}</p>
 
+                <div class="alert alert-success" *ngIf="isSuccessful">
+                  Utilisateur enregistre avec Succès!
+                </div>
+
             </form>
 
         </div>
@@ -56,6 +60,6 @@
       padding: 20px;
       background: #202020;
       color: #FFFFFF;
-      margin-bottom: 50%;
+      margin-top: 8% !important;
     }
   </style>
