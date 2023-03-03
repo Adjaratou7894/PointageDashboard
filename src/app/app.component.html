@@ -22,19 +22,19 @@
         <li class=" py-4">
       
           <div class="row px-2" routerLink="/profile-user-profile">
-            <div class="col"  > 
-              <img src="../../assets/images/photo1.jpg" style="height:50%; width:50%; border-radius: 20%; border: 8% solid #FF6000;"
+            <div class="col align-items-sm-center"  > 
+              <img src="../../assets/images/profil.png" style="height: 80%; width:80%; border-radius: 20%; border: 8% solid #FF6000;"
                 alt="">    
             </div>
-            <!-- <div class="col nom" >
-              <span>Aly</span>
-              <span>KONTE</span>
-            </div> -->
+            <div class="col nom py-5 px-2 pt-4" >
+              <span >{{nomadmin.prenom}}</span>&nbsp;
+              <span>{{nomadmin.nom}}</span>
+            </div>
           </div>
      
-  
+         
         </li>
-       <li routerLinkActive=" 'active' " class="li ">
+       <li [routerLinkActive]=" 'active' " class="li ">
           <a routerLink="/admin" class="nav-link  align-middle li">
             <i class="bi bi-house"></i> <span class="ms-1  d-sm-inline light px-3">Accueil</span></a>
         </li>
@@ -43,41 +43,41 @@
             <i class="bi bi-grid-3x3-gap-fill"></i> <span class="ms-1  d-sm-inline light px-3">Tableau bord</span></a>
         </li> -->
 
-        <li  routerLinkActive="'active'" class="li">
+        <li  [routerLinkActive]="'active'" class="li">
           <a routerLink="/formation" class="nav-link  align-middle li">
             <i class="bi bi-person-workspace"> </i><span class="ms-1  d-sm-inline light px-3">Formations</span></a>
         </li>
         
         <!-- L'onglet comportera 3 sous onglets ( la liste des ponctuels, la liste des retards, les sanctions) -->
-        <li routerLinkActive="'active'" class="li">
+        <li [routerLinkActive]="'active'" class="li">
           <a routerLink="/liste-pointage" class="nav-link  align-middle li">
                 <i class="bi bi-clipboard-data"></i> <span class="ms-1  d-sm-inline light px-3">Pointages</span></a>
         </li>
         <!-- =============================== ADMIN ============================================= -->
-        <li routerLinkActive="'active'"  class="li">
+        <li [routerLinkActive]="'active'"  class="li">
   
-          <a routerLink="/liste-globale" class="nav-link  align-middle li">
+          <a routerLink="/demande-permission" class="nav-link  align-middle li">
             <i class="bi bi-card-checklist"></i> <span class="ms-1  d-sm-inline light px-3">Permissions</span></a>
         </li>
         
         <!-- =============================== RESPONSABLE ======================================== -->
   
-        <li routerLinkActive="'active'" class="li">
+        <li [routerLinkActive]="'active'" class="li">
           <a routerLink="/creerapprenant" class="nav-link  align-middle li">
             <i class="bi bi-person-circle"></i> <span class="ms-1  d-sm-inline light px-3">Apprenants</span></a>
         </li>
-        <li routerLinkActive="'active'" class="li">
+        <li [routerLinkActive]="'active'" class="li">
           <a routerLink="/liste-user" class="nav-link  align-middle li">
             <i class="bi bi-bar-chart-line"></i> <span class="ms-1  d-sm-inline light px-3">Listes</span></a>
         </li>
-        <li routerLinkActive="'active'" class="li">
+        <li [routerLinkActive]="'active'" class="li">
           <a routerLink="/formateur" class="nav-link  align-middle li"> 
             <i class="bi bi-person-circle"></i> <span class="ms-1  d-sm-inline light px-3">Utilisateurs</span></a>
         </li>
 
 
-        <li routerLinkActive="'active'" class="li ">
-          <a routerLink="/liste-utilisateur" class="nav-link  align-middle li">
+        <li routerLinkActive="'active'" class="lidecon " routerLink="/connexion"    style="background-color: red; width: 100%; border-radius: 10px;">
+          <a  class="nav-link align-middle li"  (click)=" logout()" >
             <i class="bi bi-power "></i> <span class="ms-1  d-sm-inline light px-3">Deconnexion</span></a>
         </li>
   

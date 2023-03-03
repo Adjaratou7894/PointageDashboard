@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormationService } from '../services/formation.service';
+import { ListeService } from '../services/liste.service';
 import { PointageService } from '../services/pointage.service';
 
 @Component({
@@ -8,8 +10,10 @@ import { PointageService } from '../services/pointage.service';
 })
 export class ListePointagePage implements OnInit {
   infopointage:any
-
-  constructor(private pointageService:PointageService) { }
+  user:any
+  nomformation:any
+  constructor(private pointageService:PointageService ,private listeService: ListeService,private formationService:FormationService ) { }
+  page=1
 
   ngOnInit() {
 
@@ -17,10 +21,14 @@ export class ListePointagePage implements OnInit {
       this.infopointage  = data;
       console.log(this.infopointage,)
     })
-    this.pointageService.getAprrenant().subscribe(data=>{
-      this.infopointage  = data;
-      console.log(this.infopointage,)
-    })
+  
+
+    //this. user = this.listeService.getlisteglobale();
+    this.nomformation = this.formationService.getnomformation();
+
+    
+    
+    this.user = this.listeService.getlisteglobale();
   }
 
 }

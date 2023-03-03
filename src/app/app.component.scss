@@ -79,8 +79,12 @@
 
 .active {
     background-color: #FF6600;
-    //   width: 250px;
-    color: #202020;
+       
+    border-radius: 10%;
+
+    width: 100%;
+    color: white;
+
 }
 
 .v {
@@ -110,10 +114,10 @@ i,
 
 .nom {
     color: white;
-    display: flex;
-    margin-left: -10%;
+    // display: flex;
+    margin-left: -20%;
     flex-direction: column;
-    margin-top: 10%;
+    // margin-bottom: 2% !important;
 
     // animation-name: sidebar-nav-link-load;
     // animation-duration: 1000ms;
@@ -131,13 +135,12 @@ i,
 
 }
 
-.li:hover {
-    background-color: #FF6600;
-    color: white;
-      width: 230px;
-      border-radius: 10%;
+// .li:hover {
+//     background-color: #FF6600;
+//     color: white;
+//       width: 230px;
 
-}
+// }
 
 a {
     color: white;
@@ -189,6 +192,7 @@ ul::-webkit-scrollbar {
 .li {
     position: relative;
     top: -5%;
+    color: white;
 
 }
 

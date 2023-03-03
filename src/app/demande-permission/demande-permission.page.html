@@ -28,21 +28,22 @@
         <div class="row ro py-3">
 
 
-          <h3>La liste des pointages</h3>
+          <h3>La liste des Demandes de Permission</h3>
           <div class="trait"></div>
           <div class="position">
-            <button class="btn btnAjouter">23/02/2023</button>
+            <button class="btn btnAjouter1">Exporter</button>
             <form action="">
               <button class="btn btnAjouter recherche" style="display:flex ;"><i class="bi bi-search py-1"></i> <input
-                  type="text" style="border: hidden; border: 0; background: transparent;"></button>
+                  type="text"style="border: hidden; border: 0; background: transparent;"></button>
             </form>
             <div class="mb-3 col-12 col-md-3 form-row form-floating">
-              <select name="designation" id="designation" class="form-select form-control bi bi-filter-right">
-                <option selected>Filtré par Formation</option>
-                <option>Kalanso</option>
-                <option>AWS</option>
-                <option>IA</option>
+              <form >
+              <select name="designation" id="designation" class="form-select form-control bi bi-filter-right recherche"style="display:flex ;" >
+                <option selected class=" btnAjouter ">Filtrer par état</option>
+                <option *ngFor=" let demandeuser of enumdemande" >{{demandeuser}}</option>
+                
               </select>
+            </form>
             </div>
 
           </div>
@@ -52,25 +53,51 @@
                 <tr>
                   <th scope="col" class="ra">Nom</th>
                   <th scope="col">Prénom</th>
-                  <th scope="col">Formation</th>
-                  <th scope="col">Heure d'arrivée</th>
-                  <th scope="col" class="raf">Heure de départ</th>
+                  <th scope="col">Motif</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Date de Soumission</th>
+                  <th scope="col" class="raf">Action</th>
 
                 </tr>
               </thead>
-              <tbody>
-                <tr >
-                  <td scope="row">DIALLO</td>
-                  <td>Adjaratou</td>
-                  <td>Kalanso </td>
-                  <td >6:45</td>
-                  <td >17:30</td>
+              <tbody *ngIf="demande?.length > 0">
+                <tr  *ngFor="let demandeuser of demande | paginate: { itemsPerPage: 3, currentPage: page }">
+                  <td scope="row">{{demandeuser.user.nom}}</td>
+                  <td>{{demandeuser.user.prenom}}</td>
+                  <td>{{demandeuser.motif}}</td>
+                  <td >{{demandeuser.descriptionMotif}}</td>
+                  <td >{{demandeuser.dateSoumission}}</td>
+                  <td>
+                    <form (ngSubmit)="ModifierEtat(demandeuser)">
+                    <select id="liste" class="form-select form-control" name="edemande" [(ngModel)]="demandeuser.edemande" >
+                      <option selected> Choisir l'option </option>
+                      <option *ngFor=" let demandeuser of enumdemande" >{{demandeuser}}</option>
+                      
+                      
+                    
+                    </select>
+                    <button class="btn btnAjouter  btn-block" type="submit">Changer</button> 
+                  </form>
+                    </td>
 
                 </tr>
                  
 
               </tbody>
             </table>
+
+            <div class="d-flex justify-content-center py-3 custom-pagination ">
+              <pagination-controls  previousLabel="Précedente"
+              nextLabel="Suivante" (pageChange)="page = $event"
+              class="my-pagination"></pagination-controls>
+              
+          </div>
+          <style>
+            .custom-pagination ::ng-deep .page-item.active .page-link {
+              background-color: orange;
+              border-color: orange;
+            }
+          </style>
           </div>
         </div>
 

@@ -37,12 +37,12 @@
                   type="text" style="border: hidden; border: 0; background: transparent;"></button>
             </form>
             <div class="mb-3 col-12 col-md-3 form-row form-floating">
-              <select name="designation" id="designation" class="form-select form-control bi bi-filter-right">
-                <option selected>Filtré par Role</option>
-                <option>Apprenant</option>
-                <option>Formateur</option>
-                <option>Admin</option>
+              <form action="">
+              <select name="designation" id="designation" class="form-select form-control bi bi-filter-right recherche">
+                <option selected> Filtrer role </option>
+                      <option *ngFor=" let roleselect of role" value="{{roleselect.name}}">{{roleselect.name}}</option>
               </select>
+            </form>
             </div>
 
           </div>
@@ -60,8 +60,8 @@
 
                 </tr>
               </thead>
-              <tbody>
-                <tr  *ngFor=" let infouser of listeuser">
+              <tbody *ngIf="listeuser?.length > 0">
+                <tr  *ngFor="let infouser of listeuser | paginate: { itemsPerPage: 5, currentPage: page }">
                   <td scope="row">{{infouser.nom}}</td>
                   <td> {{infouser.prenom}}</td>
                   <td>{{infouser.email}}</td>
@@ -75,11 +75,35 @@
 
               </tbody>
             </table>
+
+            <div class="d-flex justify-content-center  custom-pagination ">
+              <pagination-controls  previousLabel="Précedente"
+              nextLabel="Suivante" (pageChange)="page = $event"
+              class="my-pagination"></pagination-controls>
+              
+          </div>
+          <style>
+            .custom-pagination ::ng-deep .page-item.active .page-link {
+              background-color: orange;
+              border-color: orange;
+            }
+          </style>
+          
           </div>
         </div>
 
 
       </div>
+
+      
+  
+    
+    
+    
+    
+    
+    
+    
     </main>
   </div>
 </div>

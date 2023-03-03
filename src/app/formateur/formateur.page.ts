@@ -34,6 +34,7 @@ export class FormateurPage implements OnInit {
 
     
    }
+   
 
   ngOnInit(): void {
     this.authService.getNomRoles().subscribe(data=>{

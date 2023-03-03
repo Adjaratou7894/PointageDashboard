@@ -9,10 +9,13 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+
 //importation 
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { StorageService } from './services/_services/storage.service';
+import { AuthService } from './services/_services/auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,4 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule {
+
+  
+
+}

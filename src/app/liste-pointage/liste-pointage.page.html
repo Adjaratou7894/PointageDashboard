@@ -58,19 +58,31 @@
 
                   </tr>
                 </thead>
-                <tbody>
-                  <tr >
-                    <td scope="row">DIALLO</td>
-                    <td>Adjaratou</td>
-                    <td>Kalanso </td>
-                    <td >6:45</td>
-                    <td >17:30</td>
+                <!-- <tbody>
+                  <tr *ngFor="let pointeur of infopointage ">
+                    <td scope="row">{{pointeur.user.nom}}</td>
+                    <td>{{pointeur.user.prenom}}</td>
+                    <td>{{pointeur.nomformation.intituleformation}}</td>
+                    <td >{{pointeur.date}}</td>
+                    <td >{{pointeur.heurefin }}</td> -->
+
+                    <tbody *ngIf="infopointage?.length > 0">
+                      <tr  *ngFor="let pointeur of infopointage | paginate: { itemsPerPage: 3, currentPage: page }">
+                        <td scope="row">{{pointeur.user.nom}}</td>
+                        <td>{{pointeur.user.prenom}}</td>
+                        <td>{{pointeur.nomformation.intituleformation}}</td>
+                        <td>{{pointeur.date}}</td>
+                        <td >{{pointeur.heurefin}}</td>
+                        <!-- <td >{{pointeur .dateSoumission}}</td> -->
+                        <td>
 
                   </tr>
                    
 
                 </tbody>
               </table>
+             
+           
             </div>
           </div>
 

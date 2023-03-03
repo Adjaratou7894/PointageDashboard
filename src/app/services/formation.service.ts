@@ -27,4 +27,8 @@ export class FormationService {
   getNombreAdmin():Observable<any>{
     return this.http.get("http://localhost:8080/api/User/listadmin");
   }
+
+  getnomformation():Observable<any>{
+    return this.http.get("http://localhost:8080/api/formation/list");
+  }
 }

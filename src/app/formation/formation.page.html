@@ -31,7 +31,7 @@
         <!-- file, nom, description, nombrepersonnedemande, datedeb, datefin, idacteurs, idacteurInternes, libelleEntite, typeAct, libelleSalle, idresponsable, userid -->
 
         <form delegate-handle="dashboard"  action=""
-          class="container1 container py-5"    name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          class="container1 container py-2"  style=" box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);"    name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
           <div class="mb-4 altert " style="border-radius:10px;">
            
@@ -70,13 +70,13 @@
 
             <div class="mb-3 col-12 col-md-6 form-row form-floating">
               <input type="date"  id="name" placeholder="yyy/mm/dd" name="dateFinForm"
-                class="form form-control inputvalue"  [(ngModel)]="form.dateFinForm" required #dateFinForm="ngModel"
-                [ngClass]="{ 'is-invalid': f.submitted && dateFinForm.errors }">
+                class="form form-control inputvalue"  [(ngModel)]="form.datetFinForm" required #datetFinForm="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && datetFinForm.errors }">
               <label for="name">Date fin: <span style="color: red;">*</span></label>
 
-              <div class="invalid-feedback" *ngIf="dateFinForm.errors && f.submitted">
-                <div *ngIf="dateFinForm.errors['required']">Début de fin obligatoire</div>
-                <div *ngIf="dateFinForm.errors['min']">La date de fin doit être supérieure à la date de début</div>
+              <div class="invalid-feedback" *ngIf="datetFinForm.errors && f.submitted">
+                <div *ngIf="datetFinForm.errors['required']">Début de fin obligatoire</div>
+                <div *ngIf="datetFinForm.errors['min']">La date de fin doit être supérieure à la date de début</div>
 
                
               </div>
@@ -132,17 +132,17 @@
               </select>
               <label>Responsable<span style="color: red;">*</span></label>
             </div>
-            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+            <div class="mb-3 col-12  form-row form-floating">
               <input type="number" id="name" placeholder="Nom"
                 class="form form-control inputvalue">
               <label for="name">Nombre d'apprenant<span style="color: red;">*</span></label>
             </div>
 
-            <div class="mb-3 col-12 col-md-6 form-row form-floating">
+            <!-- <div class="mb-3 col-12 col-md-6 form-row form-floating">
               <input type="file"   placeholder="Nom"
                 class="form form-control inputvalue">
               <label for="name">Image<span style="color: red;">*</span></label>
-            </div>
+            </div> -->
 
             <div class="form-group">
               <div class="row">
