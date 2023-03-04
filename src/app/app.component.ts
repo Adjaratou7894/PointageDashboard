@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/_services/auth.service';
 import { StorageService } from './services/_services/storage.service';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -10,7 +11,10 @@ import { StorageService } from './services/_services/storage.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router:Router ,private storageService: StorageService, private authService: AuthService) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private router:Router ,private storageService: StorageService, private authService: AuthService  
+    ) {}
   isLoginPage(): boolean {
     return this.router.url === '/connexion';
   }
@@ -53,5 +57,18 @@ export class AppComponent {
         console.log(err);
       }
     });
+  
+
+  if (isPlatformBrowser(this.platformId)) {
+    const navMain = document.getElementById('navbarCollapse');
+    if (navMain) {
+      navMain.onclick = function onClick() {
+        if (navMain) {
+          navMain.classList.remove('show');
+        }
+      };
+    }
   }
+}
+
 }

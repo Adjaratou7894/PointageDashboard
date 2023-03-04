@@ -12,6 +12,7 @@ export class ListeUserPage implements OnInit {
   listeuser:any
   page = 1;
   role:any
+  mesrole: any;
 
   constructor( private liste: ListeService, private authService:AuthService) { }
 
@@ -19,11 +20,15 @@ export class ListeUserPage implements OnInit {
 
     this.liste.getlisteglobale().subscribe(data=>{
       this.listeuser=data
-      this.authService.getNomRoles().subscribe(data=>{
-        this.role = data;
-        console.log(this.role)
-      })
+    
     })
+    this.authService.getNomRoles().subscribe(data=>{
+      this.role = data;
+      console.log(this.role)
+    })
+
+    this.mesrole = this.authService.getNomRoles();
+
   }
 
 }

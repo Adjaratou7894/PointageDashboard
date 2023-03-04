@@ -67,7 +67,7 @@
                   <td>{{infouser.email}}</td>
                   <td >{{infouser.telephone}}</td>
                   <td >{{infouser.username}}</td>
-                  <td >{{infouser.role}}</td>
+                  <td >{{infouser.roles[0].name}}</td>
                   <td><i class="bi bi-pencil-square i" style="font-size: 20px;" ></i><i class="bi bi-trash-fill i" style="color: black; font-size: 20px;"></i></td>
 
                 </tr>
@@ -79,13 +79,13 @@
             <div class="d-flex justify-content-center  custom-pagination ">
               <pagination-controls  previousLabel="Précedente"
               nextLabel="Suivante" (pageChange)="page = $event"
-              class="my-pagination"></pagination-controls>
+              class="custom-pagination" color=""></pagination-controls>
               
           </div>
           <style>
-            .custom-pagination ::ng-deep .page-item.active .page-link {
-              background-color: orange;
-              border-color: orange;
+            .custom-pagination ::ng-deep .page-item.active .page-link .li{
+              background-color: orange !important;
+              border-color: orange!important;
             }
           </style>
           

@@ -27,7 +27,7 @@
 
                 <div class="row col-12">
                   <div class="mb-3 col-12 col-md-6 form-row form-floating">
-                    <input id="name" placeholder="Nom" type="text" class="form-control" name="nom" pattern="/^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/"
+                    <input id="name" placeholder="Nom" type="text" class="form-control" name="nom" 
                       [(ngModel)]="form.nom" required #nom="ngModel"
                       [ngClass]="{ 'is-invalid': f.submitted && nom.errors }">
                     <label for="name">Nom <span style="color: red;">*</span></label>
@@ -37,7 +37,7 @@
                     </div>
                   </div>
                   <div class="mb-3 col-12 col-md-6 form-row form-floating">
-                    <input type="text" name="prenom" id="firstname" placeholder="Prénom" pattern="/^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/"
+                    <input type="text" name="prenom" id="firstname" placeholder="Prénom" 
                       class="form form-control inputvalue" [(ngModel)]="form.prenom" required #prenom="ngModel"
                       [ngClass]="{ 'is-invalid': f.submitted && prenom.errors }">
                     <label for="firstname">Prénom:<span style="color: red;">*</span></label>
@@ -47,7 +47,7 @@
                     </div>
                   </div>
                   <div class="mb-3 col-12 col-md-6 form-row form-floating">
-                    <input type="text" name="telephone" id="num" placeholder="Numéro" pattern="[0-9]"
+                    <input type="text" name="telephone" id="num" placeholder="Numéro" 
                       class="form form-control inputvalue"  [(ngModel)]="form.telephone" required minlength="8" #telephone="ngModel"
                       [ngClass]="{ 'is-invalid': f.submitted && telephone.errors }">
                     <label for="num">Numéro <span style="color: red;">*</span></label>
