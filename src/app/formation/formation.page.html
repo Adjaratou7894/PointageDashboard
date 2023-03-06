@@ -30,7 +30,7 @@
 
         <!-- file, nom, description, nombrepersonnedemande, datedeb, datefin, idacteurs, idacteurInternes, libelleEntite, typeAct, libelleSalle, idresponsable, userid -->
 
-        <form delegate-handle="dashboard"
+        <form delegate-handle="dashboard"  action=""
           class="container1 container py-2"  style=" box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);"    name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
           <div class="mb-4 altert " style="border-radius:10px;">
@@ -142,7 +142,6 @@
               </select>
               <label>Liste Apprenant<span style="color: red;">*</span></label>
             </div>
-         
             <!-- <div class="mb-3 col-12  form-row form-floating">
               <input type="number" id="name" placeholder="Nom"
                 class="form form-control inputvalue">
@@ -155,7 +154,7 @@
               <label for="name">Image<span style="color: red;">*</span></label>
             </div> -->
 
-            <!-- <div class="form-group">
+            <div class="form-group">
               <div class="row">
                 <div class="col-md-5">
                   <button type="submit" class="btn b1" >Créer</button>
@@ -169,7 +168,7 @@
 
                 <div class="alert alert-success" *ngIf="isSuccessful">
                   Formation ajoute avec Succès!
-                </div> -->
+                </div>
 
 
                 <!-- <div class="alert alert-success" *ngIf=" f.submitted && isSuccessful">
@@ -181,7 +180,7 @@
      -->
     
                 
-            <!-- </div> -->
+            </div>
 
             
 
@@ -189,23 +188,9 @@
               <!-- <div class="col-4">
                 <a href="ajouter-tache"> <p class="btn b2" style="background-color: black;color: white;">Ajouter tache</p> </a>
               </div> -->
-            <!-- </div>-->
-           </div> 
-           <div class="form-group">
-            <button class=" btnAjouter py-2 btn-block" type="submit">Creer</button>
+            </div>
           </div>
-
-          <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed ">
-            Echec erreur!<br />{{ errorMessage }}
-          </div>
-          <div class="alert alert-success" *ngIf="isSuccessful">
-            Formation ajouter avec Succès!
-          </div>
-
-          
         </form>
-
-        
         <div>
         </div>
         <!-- Footer -->

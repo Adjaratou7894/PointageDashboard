@@ -5,6 +5,7 @@ import { ImportationService } from '../services/importation.service';
   
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-creerapprenant',
@@ -22,9 +23,8 @@ export class CreerapprenantPage implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  loadinctrl: any;
-
-  constructor( private importationservice: ImportationService , private formB:FormBuilder) { }
+  
+  constructor( private loadinctrl:LoadingController, private importationservice: ImportationService , private formB:FormBuilder) { }
 
   async showLoading() {
     const loading = await this.loadinctrl.create({
@@ -55,6 +55,7 @@ export class CreerapprenantPage implements OnInit {
 
    
     importerliste(){this.liste=this.formmodule.value
+     this.showLoading()
        this.importationservice.importliste(this.liste.libelleliste, this.fichier).subscribe( 
       data=>{ 
         
