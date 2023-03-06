@@ -6,6 +6,7 @@ import { FormationService } from '../services/formation.service';
 import { StorageService } from '../services/_services/storage.service';
 // import { ToastrService } from 'ngx-toastr';
 import { ToastController } from '@ionic/angular';
+import { ImportationService } from '../services/importation.service';
 
 @Component({
   selector: 'app-formation',
@@ -18,7 +19,9 @@ import { ToastController } from '@ionic/angular';
 
 export class FormationPage implements OnInit {
 
-  
+  Back():void{
+window.history.back()
+  }
   form: any = {
     intituleformation: null,
     dateDebutForm:null,
@@ -31,24 +34,35 @@ export class FormationPage implements OnInit {
   id:any;
   formateur:any;
   responsable:any;
+  idliste:any
  
 
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
 
-  admin:any
+  admin:any;
+  libelleliste:any
+  liste:any
   
 // onFileChangeActivite($event: Event) {
 // throw new Error('Method not implemented.');
 // }
 
-  constructor( private formationService:FormationService, private formB:FormBuilder, private activateRoute:ActivatedRoute,private storageService: StorageService, private toastController: ToastController ) { }
+  constructor( private formationService:FormationService, private formB:FormBuilder, private activateRoute:ActivatedRoute,private storageService: StorageService, private toastController: ToastController,  ) { }
 
   ngOnInit():void {
     this.admin= this.storageService.getUser()
     console.log(this.admin)
+   this.formationService.getlisteformation().subscribe(data=>{
+    this.liste = data
+   })
+    
+    // this.libelleliste= this.formationService.getlisteformation()
+    // console.log(this.libelleliste)
+ 
     this.id =this.activateRoute.snapshot.params["id"];
+    this.idliste =this.activateRoute.snapshot.params["idliste"];
     this.formationService.getNombreFormateur().subscribe(data=>{
       this.formateur  = data;
       console.log(this.formateur,)
@@ -59,6 +73,7 @@ export class FormationPage implements OnInit {
       console.log(this.responsable,)
     })
    
+  
   }
 
   // async presentToast(position: 'top' | 'middle' | 'bottom') {
@@ -93,14 +108,17 @@ export class FormationPage implements OnInit {
     // }
 
     
+  console.log("la liste"+ this.form.liste);
   
-      this.formationService.creerformation(this.form,this.admin.id).subscribe({
+      this.formationService.creerformation(this.form,this.admin.id, this.form.liste).subscribe({
         next: data => {
           
           console.log(data);
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
-          this.form.reset();
+          // this.isSuccessful = true;
+          // this.isSignUpFailed = false;
+          // this.form.reset();
+          // this.reloadPage();
+          window.location.reload();
 
          
 
@@ -113,12 +131,15 @@ export class FormationPage implements OnInit {
           //   positionClass: 'toast-center'
           // });
         },
-        error: err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        }
+        // error: err => {
+        //   this.errorMessage = err.error.message;
+        //   this.isSignUpFailed = true;
+        // }
         });
       
+    }
+    reloadPage(): void {
+      window.location.reload();
     }
 
   

@@ -60,7 +60,7 @@
 
                 </tr>
               </thead>
-              <tbody *ngIf="demande?.length > 0">
+              <tbody *ngIf="demande?.length >0">
                 <tr  *ngFor="let demandeuser of demande | paginate: { itemsPerPage: 3, currentPage: page }">
                   <td scope="row">{{demandeuser.user.nom}}</td>
                   <td>{{demandeuser.user.prenom}}</td>

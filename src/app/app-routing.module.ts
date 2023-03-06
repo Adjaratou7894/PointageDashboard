@@ -21,31 +21,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  // {
-  //   path: 'menu',
-  //   pathMatch: 'full'
-  // },
-
-  // {
-  //   path: "menu", component:  MenuPage,
-
-  //   children: [
-  //   //   {path: 'admin', component: AdminPage},
-  //   //  {path: 'creerapprenant', component: CreerapprenantPage},
-  //   //   {path: 'formateur', component: FormationPage},
-
-  //   //   {path: 'formation', component: FormationPage},
-  //   //   {path: 'liste_pointage', component: ListePointagePage},
-  //   ]
-  // },
+  
   {path: 'admin', component: AdminPage},
 
 
  
-  // {
-  //   path: 'formation',
-  //   loadChildren: () => import('./formation/formation.module').then( m => m.FormationPageModule)
-  // },
+  
   {
     path: 'menu/admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
@@ -54,10 +35,7 @@ const routes: Routes = [
     path: 'formateur',
     loadChildren: () => import('./formateur/formateur.module').then( m => m.FormateurPageModule)
   },
-  // {
-  //   path: 'menu',
-  //   loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  // },
+  
   {
     path: 'creerformation',
     loadChildren: () => import('./creerformation/creerformation.module').then( m => m.CreerformationPageModule)
@@ -94,6 +72,18 @@ const routes: Routes = [
     path: 'liste-user',
     loadChildren: () => import('./liste-user/liste-user.module').then( m => m.ListeUserPageModule)
   },
+  {
+    path: 'listformation',
+    loadChildren: () => import('./listformation/listformation.module').then( m => m.ListformationPageModule)
+  },
+ 
+  {
+    path: 'details',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+
+
+
 
 
 
