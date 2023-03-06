@@ -7,6 +7,7 @@ import { StorageService } from '../services/_services/storage.service';
 // import { ToastrService } from 'ngx-toastr';
 import { ToastController } from '@ionic/angular';
 import { ImportationService } from '../services/importation.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formation',
@@ -90,36 +91,40 @@ window.history.back()
   
   onSubmit(): void {
   
-    // this.form.role=this.role
-
-    // const startDate = new Date(this.datedebutFormValue);
-    // const endDate = new Date(this.endFormValue);
-    // const startTime = new Date(this.startTimeValue);
-    // const endTime = new Date(this.endTimeValue);
-  
-    // if (endDate <= startDate) {
-    //   // afficher un message d'erreur à l'utilisateur
-    //   return;
-    // }
-  
-    // if (endTime <= startTime) {
-    //   // afficher un message d'erreur à l'utilisateur
-    //   return;
-    // }
+   
 
     
   alert("la liste"+ this.form.liste);
   
   
-      this.formationService.creerformation(this.form,this.admin.id, this.form.liste).subscribe({
-        next: data => {
+      this.formationService.creerformation(this.form,this.admin.id, this.form.liste).subscribe(
+         data => {
           
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
+
+          if(data.status == true){
+
+            Swal.fire({
+              heightAuto:false,
+              icon:'success',
+              text:data.contenu,
+              timer:3000
+            })
+          }
+          else{
+            Swal.fire({
+              heightAuto:false,
+              icon:'warning',
+              text:data.contenu,
+              timer:3000
+            })
+          }
+
+          // this.isSuccessful = true;
+          // this.isSignUpFailed = false;
           // this.form.reset();
           // this.reloadPage();
-          window.location.reload();
-                 alert("vvv"+ JSON.stringify(data))
+           window.location.reload();
+          //        alert("vvv"+ JSON.stringify(data))
 
           // this.toastr.success('La formation a été créée avec succès !');
           // this.toastr.success('La formation a été créée avec succès !', 'Succès', {
@@ -130,11 +135,11 @@ window.history.back()
           //   positionClass: 'toast-center'
           // });
         },
-        error: err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        }
-        });
+        // error: err => {
+        //   this.errorMessage = err.error.message;
+        //   this.isSignUpFailed = true;
+        // }
+        );
       
     }
     // reloadPage(): void {

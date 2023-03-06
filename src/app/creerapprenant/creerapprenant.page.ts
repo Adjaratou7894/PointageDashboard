@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImportationService } from '../services/importation.service';
   
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-creerapprenant',
@@ -21,8 +22,19 @@ export class CreerapprenantPage implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  loadinctrl: any;
 
   constructor( private importationservice: ImportationService , private formB:FormBuilder) { }
+
+  async showLoading() {
+    const loading = await this.loadinctrl.create({
+      message: 'En cours...',
+      duration: 3000,
+      spinner: 'circles',
+    });
+
+    loading.present();
+  }
 
   ngOnInit():void {
 
@@ -44,8 +56,31 @@ export class CreerapprenantPage implements OnInit {
    
     importerliste(){this.liste=this.formmodule.value
        this.importationservice.importliste(this.liste.libelleliste, this.fichier).subscribe( 
-      data=>{ console.log(data)
-         this.msg = " Liste Apprenants importée avec succès."; this.formmodule.reset() } ) }
+      data=>{ 
+        
+        if(data.status == true){
+
+          Swal.fire({
+            heightAuto:false,
+            icon:'success',
+            text:data.contenu,
+            timer:3000
+          })
+        }
+        else{
+          Swal.fire({
+            heightAuto:false,
+            icon:'warning',
+            text:"Desolé, une erreur s'est produite",
+            timer:3000
+          })
+        }
+        
+         //this.msg = " Liste Apprenants importée avec succès."; 
+         this.formmodule.reset() 
+        
+        
+        } ) }
   }
 
 
