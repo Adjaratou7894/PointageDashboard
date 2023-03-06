@@ -33,11 +33,11 @@ export class ListformationPage implements OnInit {
   }
 
   ModifierEtat(formationodc: any) {
-    const statusformation = formationodc.Eformation;
-    console.log('status ----- ' + formationodc.Eformation);
+    const statuformation = formationodc.eformation;
+    console.log('status ----- ' + formationodc.eformation);
     // Changement Etat  Formation:::::::::::::::::
     this.formationService
-      .changerstatut(formationodc.idFormation, statusformation)
+      .changerstatut(formationodc.idFormation, statuformation)
       .subscribe((data) => {
         this.etatformation = data;
       });

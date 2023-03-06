@@ -1,3 +1,3 @@
 export class Formationclass {
-    Eformation: string|undefined;
+    Eformation:string|undefined;
 }

@@ -108,19 +108,18 @@ window.history.back()
     // }
 
     
-  console.log("la liste"+ this.form.liste);
+  alert("la liste"+ this.form.liste);
+  
   
       this.formationService.creerformation(this.form,this.admin.id, this.form.liste).subscribe({
         next: data => {
           
-          console.log(data);
-          // this.isSuccessful = true;
-          // this.isSignUpFailed = false;
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
           // this.form.reset();
           // this.reloadPage();
           window.location.reload();
-
-         
+                 alert("vvv"+ JSON.stringify(data))
 
           // this.toastr.success('La formation a été créée avec succès !');
           // this.toastr.success('La formation a été créée avec succès !', 'Succès', {
@@ -131,16 +130,16 @@ window.history.back()
           //   positionClass: 'toast-center'
           // });
         },
-        // error: err => {
-        //   this.errorMessage = err.error.message;
-        //   this.isSignUpFailed = true;
-        // }
+        error: err => {
+          this.errorMessage = err.error.message;
+          this.isSignUpFailed = true;
+        }
         });
       
     }
-    reloadPage(): void {
-      window.location.reload();
-    }
+    // reloadPage(): void {
+    //   window.location.reload();
+    // }
 
   
     // const role= new Set(['admin', 'formateur']);

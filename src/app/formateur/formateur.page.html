@@ -141,7 +141,7 @@
                   <button class="btn btnAjouter py-2 btn-block" type="submit">Ajouter</button>
                 </div>
 
-                <div class="alert alert-warning" *ngIf="f.submitted">
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
                   Echec erreur!<br />{{ errorMessage }}
                 </div>
 

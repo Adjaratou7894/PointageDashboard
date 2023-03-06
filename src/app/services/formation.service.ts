@@ -51,7 +51,7 @@ export class FormationService {
 
   changerstatut(idFormation:number,formationstatus:String): Observable<any> {
     console.log("statut"+formationstatus);
-    console.log("id"+idFormation);
+    console.log("id"+ idFormation);
     
     if(formationstatus === 'INITIER') {
       return this.http.post(
@@ -60,7 +60,7 @@ export class FormationService {
   
        
       );
-    } else if(formationstatus=== 'ENCOURS') {
+    } else if(formationstatus==='ENCOURS') {
       return this.http.post(
         `http://localhost:8080/api/formation/ENCOURS_TRAITEMENT/${idFormation}`,formationstatus,
         httpOptions
@@ -69,7 +69,7 @@ export class FormationService {
       );
     } else {
       return this.http.post(
-        `http://localhost:8080/api/permission/NON_ACCEPTER/${idFormation}`,formationstatus,
+        `http://localhost:8080/api/formation/NON_ACCEPTER/${idFormation}`,formationstatus,
         httpOptions
   
        

@@ -58,13 +58,15 @@ export class FormateurPage implements OnInit {
           console.log(data);
           this.isSuccessful = true;
           this.isSignUpFailed = false;
+          window.location.reload();
         },
         error: err => {
           this.errorMessage = err.error.message;
           this.isSignUpFailed = true;
         }
       });
-      this.form.reset();
+      // this.form.reset();
+      
       
     })
 

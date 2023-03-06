@@ -8,6 +8,9 @@ import { ListeService } from '../services/liste.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+  Back():void{
+    window.history.back()
+      }
 
   nomformation:any;
   enumformation:any;
@@ -17,6 +20,8 @@ export class DetailsPage implements OnInit {
 
   constructor( private formationService:FormationService,private listeService: ListeService) { }
   page=1
+
+  
 
   ngOnInit() {
 
