@@ -54,7 +54,7 @@ window.history.back()
 
   ngOnInit():void {
     this.admin= this.storageService.getUser()
-    console.log(this.admin)
+    // console.log(this.admin)
    this.formationService.getlisteformation().subscribe(data=>{
     this.liste = data
    })
@@ -66,12 +66,12 @@ window.history.back()
     this.idliste =this.activateRoute.snapshot.params["idliste"];
     this.formationService.getNombreFormateur().subscribe(data=>{
       this.formateur  = data;
-      console.log(this.formateur,)
+      // console.log(this.formateur,)
     })
 
     this.formationService.getNombreAdmin().subscribe(data=>{
       this.responsable  = data;
-      console.log(this.responsable,)
+      // console.log(this.responsable,)
     })
    
   

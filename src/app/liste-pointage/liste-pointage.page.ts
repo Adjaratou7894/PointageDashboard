@@ -19,7 +19,7 @@ export class ListePointagePage implements OnInit {
 
     this.pointageService.getlistepointage().subscribe(data=>{
       this.infopointage  = data;
-      console.log(this.infopointage,)
+      // console.log(this.infopointage,)
     })
   
 

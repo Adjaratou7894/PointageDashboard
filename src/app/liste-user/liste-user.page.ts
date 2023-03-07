@@ -24,7 +24,7 @@ export class ListeUserPage implements OnInit {
     })
     this.authService.getNomRoles().subscribe(data=>{
       this.role = data;
-      console.log(this.role)
+      // console.log(this.role)
     })
 
     this.mesrole = this.authService.getNomRoles();

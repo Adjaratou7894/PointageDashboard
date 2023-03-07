@@ -49,13 +49,13 @@ export class FormateurPage implements OnInit {
 
     
     this.authService.getRoles(this.form.role).subscribe((data:any) =>{
-      console.log("role " , data );
+      // console.log("role " , data );
       this.form.role= [data.name] 
-      console.log("form " , this.form)
+      // console.log("form " , this.form)
       this.authService.register( this.form).subscribe({
         next: data => {
           
-          console.log(data);
+          // console.log(data);
           this.isSuccessful = true;
           this.isSignUpFailed = false;
           window.location.reload();

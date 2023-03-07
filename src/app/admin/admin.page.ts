@@ -27,12 +27,12 @@ export class AdminPage implements OnInit {
 
   ngOnInit() {
     this.nomadmin= this.storageService.getUser()
-    console.log(this.nomadmin)
+    // console.log(this.nomadmin)
     
 
     this.adminService.getinfoAdmin().subscribe(data=>{
       this.info = data;
-      console.log(this.info,)
+      // console.log(this.info,)
     })
     this.adminService.getNombreAprrenant().subscribe(data=>{
       this.nombreapprenant=data.length

@@ -34,7 +34,7 @@ export class ListformationPage implements OnInit {
 
   ModifierEtat(formationodc: any) {
     const statuformation = formationodc.eformation;
-    console.log('status ----- ' + formationodc.eformation);
+    // console.log('status ----- ' + formationodc.eformation);
     // Changement Etat  Formation:::::::::::::::::
     this.formationService
       .changerstatut(formationodc.idFormation, statuformation)
